@@ -1,70 +1,70 @@
-server:
-  port: '8000'
-
-spring:
-  profiles:
-    active: dev
-
----
-
-spring:
-  profiles: dev
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/spring_complete
-    password: root
-  h2:
-    console:
-      enabled: 'true'
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: 'true'
-welcome:
-  message: Xenosty Message
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-        exclude: "env,beans"
-
-
----
-
-spring:
-  profiles: qa
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/spring_complete_qa
-    password: root
-  h2:
-    console:
-      enabled: 'true'
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: 'true'
-welcome:
-  message: Xenosty Message
-
----
-
-spring:
-  profiles: prod
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/spring_complete_prod
-    password: root
-  h2:
-    console:
-      enabled: 'true'
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: 'true'
-welcome:
-  message: Xenosty Message
+#server:
+#  port: '8000'
+#
+#spring:
+#  profiles:
+#    active: dev
+#
+#---
+#
+#spring:
+#  profiles: dev
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    url: jdbc:mysql://localhost:3306/spring_complete
+#    password: root
+#  h2:
+#    console:
+#      enabled: 'true'
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: 'true'
+#welcome:
+#  message: Xenosty Message
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#        exclude: "env,beans"
+#
+#
+#---
+#
+#spring:
+#  profiles: qa
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    url: jdbc:mysql://localhost:3306/spring_complete_qa
+#    password: root
+#  h2:
+#    console:
+#      enabled: 'true'
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: 'true'
+#welcome:
+#  message: Xenosty Message
+#
+#---
+#
+#spring:
+#  profiles: prod
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    url: jdbc:mysql://localhost:3306/spring_complete_prod
+#    password: root
+#  h2:
+#    console:
+#      enabled: 'true'
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: 'true'
+#welcome:
+#  message: Xenosty Message
