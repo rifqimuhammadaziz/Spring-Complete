@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import rifqimuhammadaziz.springcomplete.entity.Course;
+import rifqimuhammadaziz.springcomplete.entity.Student;
 import rifqimuhammadaziz.springcomplete.entity.Teacher;
 
 import java.util.List;
@@ -76,5 +77,26 @@ class CourseRepositoryTest {
         List<Course> courses = courseRepository.findCourseByTitleContaining("D", firstPageTenRecords).getContent();
 
         System.out.println(courses);
+    }
+
+    @Test
+    void saveCourseWithStudentAndTeacher() {
+        Teacher teacher = Teacher.builder()
+                .firstName("Fathil")
+                .lastName("Arham")
+                .build();
+        Student student = Student.builder()
+                .firstName("Rifqi")
+                .lastName("Muhammad Aziz")
+                .emailId("rifqimuhammadaziz@gmail.com")
+                .build();
+        Course course = Course.builder()
+                .title("POS Laravel")
+                .credit(50)
+                .teacher(teacher)
+                .build();
+        course.addStudents(student);
+
+        courseRepository.save(course);
     }
 }
